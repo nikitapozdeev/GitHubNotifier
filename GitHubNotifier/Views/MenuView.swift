@@ -8,39 +8,24 @@
 import SwiftUI
 
 struct MenuView: View {
-    @Namespace var animation
+    @ObservedObject var appState = AppState()
+    
     var body: some View {
-        VStack {
-            HStack {
-                Image("default_userpic")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 30, height: 30)
-                    .clipShape(Circle())
-                
-                Text("GitHub username")
-                    .font(.callout)
-                    .foregroundColor(.primary)
-                
-                Spacer(minLength: 0)
-                
-                Button(action: {}, label: {
-                    Image(systemName: "gearshape.fill")
-                        .foregroundColor(.primary)
-                })
-                    .buttonStyle(PlainButtonStyle())
-                
-                Button(action: {}, label: {
-                    Image(systemName: "info.circle.fill")
-                        .foregroundColor(.primary)
-                })
-                    .buttonStyle(PlainButtonStyle())
-            }
-            .padding([.horizontal, .vertical])
-            
-            Divider()
+        NavigationView {
+            view(for: appState.currentView)
         }
-        .frame(width: 250, height: 500, alignment: Alignment.top)
+     }
+    
+    @ViewBuilder
+    func view(for route: Views?) -> some View {
+        switch route {
+        case .some(.notifications):
+            NotificationsView().environmentObject(appState)
+        case .some(.settings):
+            SettingsView().environmentObject(appState)
+        default:
+            SettingsView().environmentObject(appState)
+        }
     }
 }
 
