@@ -13,12 +13,14 @@
 		9855F411275E6747006E1C4D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9855F410275E6747006E1C4D /* Preview Assets.xcassets */; };
 		9855F439275E6EF7006E1C4D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9855F438275E6EF7006E1C4D /* MenuView.swift */; };
 		9855F43B275E78CB006E1C4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9855F43A275E78CB006E1C4D /* AppDelegate.swift */; };
+		98B0BF5227627507004749AE /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B0BF5127627507004749AE /* Notification.swift */; };
+		98B0BF5427627770004749AE /* NotificationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B0BF5327627770004749AE /* NotificationInfo.swift */; };
+		98B0BF58276279CE004749AE /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B0BF57276279CE004749AE /* Repository.swift */; };
 		98BB5389275FE97E00F80FD1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BB5388275FE97E00F80FD1 /* SettingsView.swift */; };
 		98BB538C275FF11A00F80FD1 /* NumbersObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BB538B275FF11A00F80FD1 /* NumbersObservable.swift */; };
 		98BB538E275FF76200F80FD1 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BB538D275FF76200F80FD1 /* NotificationsView.swift */; };
 		98BB5390275FFB1A00F80FD1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BB538F275FFB1A00F80FD1 /* AppState.swift */; };
 		98FCA234275EA00E00F444C5 /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FCA233275EA00E00F444C5 /* GitHubService.swift */; };
-		98FCA237275EA97700F444C5 /* OctoKit in Frameworks */ = {isa = PBXBuildFile; productRef = 98FCA236275EA97700F444C5 /* OctoKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,9 @@
 		9855F438275E6EF7006E1C4D /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		9855F43A275E78CB006E1C4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9855F43C275E820C006E1C4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		98B0BF5127627507004749AE /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		98B0BF5327627770004749AE /* NotificationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationInfo.swift; sourceTree = "<group>"; };
+		98B0BF57276279CE004749AE /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		98BB5388275FE97E00F80FD1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		98BB538B275FF11A00F80FD1 /* NumbersObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersObservable.swift; sourceTree = "<group>"; };
 		98BB538D275FF76200F80FD1 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
@@ -43,7 +48,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98FCA237275EA97700F444C5 /* OctoKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +73,7 @@
 		9855F408275E6746006E1C4D /* GitHubNotifier */ = {
 			isa = PBXGroup;
 			children = (
+				98B0BF50276274F1004749AE /* Models */,
 				98BB538A275FF0E800F80FD1 /* Utils */,
 				98FCA232275E9FDF00F444C5 /* Services */,
 				98FCA231275E9FAE00F444C5 /* Views */,
@@ -89,6 +94,16 @@
 				9855F410275E6747006E1C4D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		98B0BF50276274F1004749AE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				98B0BF5127627507004749AE /* Notification.swift */,
+				98B0BF5327627770004749AE /* NotificationInfo.swift */,
+				98B0BF57276279CE004749AE /* Repository.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		98BB538A275FF0E800F80FD1 /* Utils */ = {
@@ -135,7 +150,6 @@
 			);
 			name = GitHubNotifier;
 			packageProductDependencies = (
-				98FCA236275EA97700F444C5 /* OctoKit */,
 			);
 			productName = GitHubNotifier;
 			productReference = 9855F406275E6746006E1C4D /* GitHubNotifier.app */;
@@ -166,7 +180,6 @@
 			);
 			mainGroup = 9855F3FD275E6746006E1C4D;
 			packageReferences = (
-				98FCA235275EA97700F444C5 /* XCRemoteSwiftPackageReference "octokit" */,
 			);
 			productRefGroup = 9855F407275E6746006E1C4D /* Products */;
 			projectDirPath = "";
@@ -197,9 +210,12 @@
 				98FCA234275EA00E00F444C5 /* GitHubService.swift in Sources */,
 				98BB538C275FF11A00F80FD1 /* NumbersObservable.swift in Sources */,
 				9855F43B275E78CB006E1C4D /* AppDelegate.swift in Sources */,
+				98B0BF58276279CE004749AE /* Repository.swift in Sources */,
+				98B0BF5427627770004749AE /* NotificationInfo.swift in Sources */,
 				9855F40C275E6746006E1C4D /* ContentView.swift in Sources */,
 				98BB5389275FE97E00F80FD1 /* SettingsView.swift in Sources */,
 				9855F439275E6EF7006E1C4D /* MenuView.swift in Sources */,
+				98B0BF5227627507004749AE /* Notification.swift in Sources */,
 				9855F40A275E6746006E1C4D /* GitHubNotifierApp.swift in Sources */,
 				98BB5390275FFB1A00F80FD1 /* AppState.swift in Sources */,
 				98BB538E275FF76200F80FD1 /* NotificationsView.swift in Sources */,
@@ -400,25 +416,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		98FCA235275EA97700F444C5 /* XCRemoteSwiftPackageReference "octokit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/nerdishbynature/octokit.swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		98FCA236275EA97700F444C5 /* OctoKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 98FCA235275EA97700F444C5 /* XCRemoteSwiftPackageReference "octokit" */;
-			productName = OctoKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9855F3FE275E6746006E1C4D /* Project object */;
 }

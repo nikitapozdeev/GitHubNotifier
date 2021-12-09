@@ -6,49 +6,27 @@
 //
 
 import Foundation
-import OctoKit
 
 class GitHubService {
-    let octokit: Octokit?
+    var session = URLSession.shared
     var userAvatarUrl: String?
-    
-    init() {
+
+    func fetchNotifications() async throws -> [Notification] {
+        let url = URL(string: "https://api.github.com/notifications")!
         let githubToken = EnvironmentService.getEnvironmentVar("GITHUB_TOKEN")
-        let config = TokenConfiguration(githubToken)
-        octokit = Octokit(config)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("token \(githubToken!)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/vnd.github.v3+json", forHTTPHeaderField: "Accept")
+        
+        // Use the async variant of URLSession to fetch data
+        // Code might suspend here
+        let (data, _) = try await session.data(for: request)
+        
+        // Parse the JSON data
+        return try JSONDecoder().decode([Notification].self, from: data)
     }
-    
-    func authenticate() {
-        octokit?.me() { response in
-            switch response {
-            case .success(let user):
-                print(user.login as Any)
-                
-                self.userAvatarUrl = user.avatarURL
-                self.fetchRepositories()
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    func fetchRepositories() {
-        octokit?.repositories() { response in
-            switch response {
-            case .success(let repositories):
-                repositories.forEach { repository in
-                    print(repository.name as Any)
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    func fetchPullRequests() {
-      
-    }
-    
 }
 
 struct EnvironmentService {

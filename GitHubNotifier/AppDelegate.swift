@@ -13,8 +13,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var statusItem: NSStatusItem?
     var popover = NSPopover()
     
-    func applicationDidFinishLaunching(_ notification: Notification) {
-        gitHubService.authenticate()
+    func applicationDidFinishLaunching(_ notification: AppKit.Notification) {
+        Task {
+            do {
+                
+                let notifications = try await gitHubService.fetchNotifications()
+                for notification in notifications {
+                    print(notification.id)
+                }
+                
+            } catch {
+                print("Request failed with error: \(error)")
+            }
+        }
         
         let menuView = MenuView()
         popover.behavior = .transient
