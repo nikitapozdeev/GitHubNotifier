@@ -12,15 +12,7 @@ struct NotifactionsHeaderView: View {
     
     var body: some View {
         HStack {
-            Image("default_userpic")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 30, height: 30)
-                .clipShape(Circle())
-            
-            Text("GitHub username")
-                .font(.callout)
-                .foregroundColor(.primary)
+            UserView()
             
             Spacer(minLength: 0)
             
