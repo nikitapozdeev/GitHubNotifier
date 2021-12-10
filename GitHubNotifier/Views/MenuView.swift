@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MenuView: View {
-    @ObservedObject var appState = AppState()
+    @EnvironmentObject var appState: AppState
     
     var body: some View {
         NavigationView {

@@ -14,8 +14,10 @@ enum Views {
 
 class AppState: ObservableObject {
     @Published var currentView: Views
+    @Published var notifications: [Notification]
     
     init() {
         self.currentView = Views.notifications
+        self.notifications = []
     }
 }

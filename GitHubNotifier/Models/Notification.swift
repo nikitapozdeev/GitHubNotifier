@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Notification: Codable {
+struct Notification: Codable, Identifiable {
     let id: String
     //var repository: Repository
     //let subject: NotificationInfo
