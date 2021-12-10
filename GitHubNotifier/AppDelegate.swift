@@ -18,6 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: AppKit.Notification) {
         Task {
             do {
+                appState.user = try await gitHubService.fetchUser()
                 appState.notifications = try await gitHubService.fetchNotifications()
             } catch {
                 print("Request failed with error: \(error)")

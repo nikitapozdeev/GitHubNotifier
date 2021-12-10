@@ -14,6 +14,7 @@ enum Views {
 
 class AppState: ObservableObject {
     @Published var currentView: Views
+    @Published var user: User?
     @Published var notifications: [Notification]
     
     init() {
