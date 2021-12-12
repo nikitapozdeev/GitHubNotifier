@@ -18,6 +18,7 @@
 		987D368F2764024C00F71078 /* NotificationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987D368E2764024C00F71078 /* NotificationsListView.swift */; };
 		987D3692276403C100F71078 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987D3691276403C100F71078 /* User.swift */; };
 		987D369527640B9000F71078 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987D369427640B9000F71078 /* UserView.swift */; };
+		988AA54C27663A8700E36AB6 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988AA54B27663A8700E36AB6 /* StatusBarView.swift */; };
 		98B0BF5227627507004749AE /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B0BF5127627507004749AE /* Notification.swift */; };
 		98B0BF5427627770004749AE /* NotificationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B0BF5327627770004749AE /* NotificationInfo.swift */; };
 		98B0BF58276279CE004749AE /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B0BF57276279CE004749AE /* Repository.swift */; };
@@ -43,6 +44,7 @@
 		987D368E2764024C00F71078 /* NotificationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsListView.swift; sourceTree = "<group>"; };
 		987D3691276403C100F71078 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		987D369427640B9000F71078 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		988AA54B27663A8700E36AB6 /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
 		98B0BF5127627507004749AE /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		98B0BF5327627770004749AE /* NotificationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationInfo.swift; sourceTree = "<group>"; };
 		98B0BF57276279CE004749AE /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				9855F40B275E6746006E1C4D /* ContentView.swift */,
 				9855F438275E6EF7006E1C4D /* MenuView.swift */,
 				98BB5388275FE97E00F80FD1 /* SettingsView.swift */,
+				988AA54B27663A8700E36AB6 /* StatusBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				987D368F2764024C00F71078 /* NotificationsListView.swift in Sources */,
 				98BB5389275FE97E00F80FD1 /* SettingsView.swift in Sources */,
 				9855F439275E6EF7006E1C4D /* MenuView.swift in Sources */,
+				988AA54C27663A8700E36AB6 /* StatusBarView.swift in Sources */,
 				98B0BF5227627507004749AE /* Notification.swift in Sources */,
 				987D369527640B9000F71078 /* UserView.swift in Sources */,
 				9855F40A275E6746006E1C4D /* GitHubNotifierApp.swift in Sources */,

@@ -16,16 +16,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @ObservedObject var appState = AppState()
     
     func applicationDidFinishLaunching(_ notification: AppKit.Notification) {
-        Task {
-            do {
-                appState.user = try await gitHubService.fetchUser()
-                appState.notifications = try await gitHubService.fetchNotifications()
-            } catch {
-                print("Request failed with error: \(error)")
-            }
-        }
-
-        
         let menuView = MenuView().environmentObject(appState)
         popover.behavior = .transient
         popover.animates = true
@@ -38,6 +28,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let MenuButton = statusItem?.button {
             MenuButton.image = NSImage(systemSymbolName: "exclamationmark.bubble.fill", accessibilityDescription: nil)
             MenuButton.action = #selector(MenuButtonToggle)
+        }
+        
+        Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
+            self.synchronizeChanges()
+        }
+
+    }
+    
+    func synchronizeChanges() {
+        Task {
+            do {
+                appState.startSynchronization()
+                appState.user = try await gitHubService.fetchUser()
+                appState.notifications = try await gitHubService.fetchNotifications()
+            } catch {
+                print("Request failed with error: \(error)")
+            }
+            appState.finishSynchronization()
         }
     }
     

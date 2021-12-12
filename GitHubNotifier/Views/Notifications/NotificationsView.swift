@@ -15,6 +15,8 @@ struct NotificationsView: View {
             NotifactionsHeaderView()
             Divider()
             NotificationsListView()
+            Divider()
+            StatusBarView()
         }
         .frame(width: 250, height: 500, alignment: Alignment.top)
     }
