@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		980E272027693DEC00EE1BFB /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980E271F27693DEC00EE1BFB /* SettingsService.swift */; };
+		980E272227693E5900EE1BFB /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980E272127693E5900EE1BFB /* Settings.swift */; };
 		9855F40A275E6746006E1C4D /* GitHubNotifierApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9855F409275E6746006E1C4D /* GitHubNotifierApp.swift */; };
-		9855F40C275E6746006E1C4D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9855F40B275E6746006E1C4D /* ContentView.swift */; };
 		9855F40E275E6747006E1C4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9855F40D275E6747006E1C4D /* Assets.xcassets */; };
 		9855F411275E6747006E1C4D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9855F410275E6747006E1C4D /* Preview Assets.xcassets */; };
 		9855F439275E6EF7006E1C4D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9855F438275E6EF7006E1C4D /* MenuView.swift */; };
@@ -30,9 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		980E271F27693DEC00EE1BFB /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
+		980E272127693E5900EE1BFB /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		9855F406275E6746006E1C4D /* GitHubNotifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubNotifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9855F409275E6746006E1C4D /* GitHubNotifierApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubNotifierApp.swift; sourceTree = "<group>"; };
-		9855F40B275E6746006E1C4D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9855F40D275E6747006E1C4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9855F410275E6747006E1C4D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9855F412275E6747006E1C4D /* GitHubNotifier.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitHubNotifier.entitlements; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				98B0BF5327627770004749AE /* NotificationInfo.swift */,
 				98B0BF57276279CE004749AE /* Repository.swift */,
 				987D3691276403C100F71078 /* User.swift */,
+				980E272127693E5900EE1BFB /* Settings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -151,7 +154,6 @@
 			children = (
 				987D369327640B8200F71078 /* User */,
 				987D36902764029700F71078 /* Notifications */,
-				9855F40B275E6746006E1C4D /* ContentView.swift */,
 				9855F438275E6EF7006E1C4D /* MenuView.swift */,
 				98BB5388275FE97E00F80FD1 /* SettingsView.swift */,
 				988AA54B27663A8700E36AB6 /* StatusBarView.swift */,
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				98FCA233275EA00E00F444C5 /* GitHubService.swift */,
+				980E271F27693DEC00EE1BFB /* SettingsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -249,16 +252,17 @@
 				987D368B2763FBCE00F71078 /* NotificationItemView.swift in Sources */,
 				98B0BF58276279CE004749AE /* Repository.swift in Sources */,
 				98B0BF5427627770004749AE /* NotificationInfo.swift in Sources */,
-				9855F40C275E6746006E1C4D /* ContentView.swift in Sources */,
 				987D368F2764024C00F71078 /* NotificationsListView.swift in Sources */,
 				98BB5389275FE97E00F80FD1 /* SettingsView.swift in Sources */,
 				9855F439275E6EF7006E1C4D /* MenuView.swift in Sources */,
 				988AA54C27663A8700E36AB6 /* StatusBarView.swift in Sources */,
 				98B0BF5227627507004749AE /* Notification.swift in Sources */,
+				980E272227693E5900EE1BFB /* Settings.swift in Sources */,
 				987D369527640B9000F71078 /* UserView.swift in Sources */,
 				9855F40A275E6746006E1C4D /* GitHubNotifierApp.swift in Sources */,
 				98BB5390275FFB1A00F80FD1 /* AppState.swift in Sources */,
 				98BB538E275FF76200F80FD1 /* NotificationsView.swift in Sources */,
+				980E272027693DEC00EE1BFB /* SettingsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

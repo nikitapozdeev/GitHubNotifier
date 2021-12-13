@@ -18,7 +18,6 @@ struct NotificationsView: View {
             Divider()
             StatusBarView()
         }
-        .frame(width: 250, height: 500, alignment: Alignment.top)
     }
 }
 

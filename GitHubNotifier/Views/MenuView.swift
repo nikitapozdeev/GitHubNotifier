@@ -11,20 +11,19 @@ struct MenuView: View {
     @EnvironmentObject var appState: AppState
     
     var body: some View {
-        NavigationView {
-            view(for: appState.currentView)
-        }
-     }
+        view(for: appState.currentView)
+            .frame(width: 250, height: 500, alignment: Alignment.top)
+    }
     
     @ViewBuilder
     func view(for route: Views?) -> some View {
         switch route {
         case .some(.notifications):
-            NotificationsView().environmentObject(appState)
+            NotificationsView()
         case .some(.settings):
-            SettingsView().environmentObject(appState)
+            SettingsView()
         default:
-            SettingsView().environmentObject(appState)
+            SettingsView()
         }
     }
 }

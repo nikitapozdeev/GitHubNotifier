@@ -9,6 +9,7 @@ import SwiftUI
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     var gitHubService = GitHubService()
+    var settingsService = SettingsService()
     
     var statusItem: NSStatusItem?
     var popover = NSPopover()
@@ -16,18 +17,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @ObservedObject var appState = AppState()
     
     func applicationDidFinishLaunching(_ notification: AppKit.Notification) {
-        let menuView = MenuView().environmentObject(appState)
-        popover.behavior = .transient
-        popover.animates = true
-        popover.contentViewController = NSViewController()
-        popover.contentViewController?.view = NSHostingView(rootView: menuView)
-        popover.contentViewController?.view.window?.makeKey()
+        let menuView = MenuView()
+            .environmentObject(appState)
         
-        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-        
-        if let MenuButton = statusItem?.button {
-            MenuButton.image = NSImage(systemSymbolName: "exclamationmark.bubble.fill", accessibilityDescription: nil)
-            MenuButton.action = #selector(MenuButtonToggle)
+        self.popover.behavior = .transient
+        self.popover.animates = true
+        self.popover.contentViewController = NSViewController()
+        self.popover.contentViewController?.view = NSHostingView(rootView: menuView)
+        self.popover.contentViewController?.view.window?.makeKey()
+               
+        self.statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+        if let menuButton = self.statusItem?.button {
+            menuButton.image = NSImage(systemSymbolName: "exclamationmark.bubble.fill", accessibilityDescription: nil)
+            menuButton.action = #selector(MenuButtonToggle)
         }
         
         Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
@@ -49,9 +51,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    @objc func MenuButtonToggle() {
-        if let menuButton = statusItem?.button {
-            self.popover.show(relativeTo: menuButton.bounds, of: menuButton, preferredEdge: NSRectEdge.minY)
+    @objc func MenuButtonToggle(_ sender: AnyObject?) {
+        guard let menuButton = self.statusItem?.button else {
+            return
         }
+        
+        self.popover.show(
+            relativeTo: menuButton.bounds,
+            of: menuButton,
+            preferredEdge: NSRectEdge.minY
+        )
     }
 }

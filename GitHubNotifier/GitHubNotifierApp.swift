@@ -11,7 +11,7 @@ import SwiftUI
 struct GitHubNotifierApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate   
     var body: some Scene {
-        Settings {
+        SwiftUI.Settings {
             AnyView(MenuView())
         }
     }

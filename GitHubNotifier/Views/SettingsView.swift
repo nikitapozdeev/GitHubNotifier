@@ -16,31 +16,37 @@ struct SettingsView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Text("Token:")
-                TextField("", text: $token)
+            Form {
+                Section {
+                    HStack {
+                        Text("Token:")
+                        TextField("", text: $token)
+                    }
+                }
+                Section {
+                    HStack {
+                        Text("Refresh rate:")
+                        TextField("", text: $syncRate.value)
+                    }
+                }
             }
-            
-            HStack {
-                Text("Refresh rate:")
-                TextField("", text: $syncRate.value)
-            }
-            
             Divider()
-            
             HStack {
-                Button("Save") {
-                    appState.currentView = .notifications
-                }.keyboardShortcut(.defaultAction)
-
-                
-                Button("Cancel") {
-                    appState.currentView = .notifications
-                }.keyboardShortcut(.cancelAction)
+                Button("Save", action: saveSettings)
+                    .keyboardShortcut(.defaultAction)
+                Button("Cancel", action: cancelChanges)
+                    .keyboardShortcut(.cancelAction)
             }
         }
         .padding([.horizontal, .vertical])
-        .frame(width: 250, height: 500, alignment: Alignment.top)
+    }
+    
+    func saveSettings() {
+        appState.currentView = .notifications
+    }
+    
+    func cancelChanges() {
+        appState.currentView = .notifications
     }
 }
 

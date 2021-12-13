@@ -30,7 +30,7 @@ struct StatusBarView: View {
                    
                 }
                     .progressViewStyle(CircularProgressViewStyle())
-                    .frame(width: 5, height: 5, alignment: .center)
+                    //.frame(width: 5, height: 5, alignment: .center)
             }
         }
         .padding(.horizontal)
